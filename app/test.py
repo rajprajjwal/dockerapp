@@ -1,5 +1,11 @@
 import unittest
 import app
+import ssl
+from http.client import HTTPSConnection
+context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+
+# Create HTTPS connection
+c = HTTPSConnection("0.0.0.0", context=context)
 
 class TestDockerapp(unittest.TestCase):
 
